@@ -85,15 +85,13 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Navigate to the **IDCS console** sign-in page provided by your lab facilitator. Enter the provided administrator username and password. **If you do not have the URL or the credentials, please contact your lab facilitator.**
 
-![](./images/erp2.jpg " ")
+![](./images/idcs-login.png " ")
 
 -   Once logged in, you will see the IDCS console page displaying all of the relevant information (users, groups, passwords, etc.) that an identity domain administrator would be interested in.  
 
-![](./images/da1.jpg " ")
-
 -   In the **Users** module, click on the profile icon silhouette to navigate to the list of users in IDCS.
 
-![](./images/da2.jpg " ")
+![](./images/idcs-console.png " ")
 
 ### **STEP 2**: Create a new user in IDCS
 
@@ -101,7 +99,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Click on the **Add** button to add a new user to IDCS.
     
-![](./images/da3.jpg " ")
+![](./images/idcs-users.png " ")
 
 -   A window will pop up prompting us to enter the new user's information. Go ahead and fill out the required fields then click **Finish**.
 
