@@ -116,13 +116,13 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 ### **STEP 3**: Verify new user creation in ERP Cloud
 -   Sign in to the demo ERP Cloud instance as **DEMOFAADMIN** and use the password copied previously from the clipboard. This user, Harry Hooper, is the security administrator for the ERP Cloud instance.
 
-![](./files/receipt.jpg)
+![](./files/receipt.jpg" ")
 
 -   Navigate to the **home page** of the ERP Cloud instance.
 
 -   Click on the upper left menu.
 
--   Expand the **Tools** submenu.
+-   Expand the **Tools** sub-menu.
 
 -   Click on **Security Console**.
 
@@ -140,110 +140,83 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   If the provisioning was successful, we will see the new user under **Search Results** as shown.
 
-## Part 3. Change persona
+## Part 3. Monitor risky user behavior in ERP Cloud with CASB.
 
-### **STEP 1**: Sign out kerry.lane
+### **STEP 1**: Access the CASB console.
 
--   Click the top right icon and then click on **Sign Out**
+-   Navigate to the **IDCS console** sign-in page provided by your lab facilitator. Enter the provided administrator username and password. **If you do not have the URL or the credentials, please contact your lab facilitator.**
 
 ![](./images/signout.jpg " ")
 
-### **STEP 2**: Sign in using brian.joseph
+-   Once logged in, we're greeted with the CASB dashboard. Here the security administrator can get quick insights into what applications are experiencing risky behaviors. These risks can also be filtered by geographical location, risk type, and associated users.
 
--   Enter the username **brian.joseph** and the **password** you copied earlier in the workshop.
+### **STEP 2**: Create a new risk policy.
+
+-   Now we're going to create a new risk policy to track abnormal user behavior.
+
+-   Click on the upper left menu.
+
+-   Expand the **Configuration** sub-menu.
+
+-   Click on **Policy Management**. 
+
+-   Here we can see a list of all the policies our CASB is leveraging to monitor all the applications associated with it for risky behavior. These policies are used to determine how we define risky behavior. 
+
+-   Click on **New Policy**. 
+
+    -   **1**: Enter a **Name**, **Description**, and select a **Risk Priority** for the new policy. You may choose to include this in a user's risk score as well. Click **Next**.
+
+    -   **2**: Select **ERPCloud** for **Application type**, **Any** for **Application instance**, **Job Role** for **Resource**, **Text** for **Resource name**, contains **Business Development Manager**, **Role membership added** for **Action on this resource**. Click **Next**.
+    
+    -   **3**: Leave blank and click **Next**.
+    
+    -   **4**: Leave as is and click **Next**.
+    
+    -   **5**: You provide a custom alert message or add your email for the alert to be sent to you directly. Click **Next**.
+    
+    -   **6**: Review and click **Submit**.
 
 ![](./images/signin-brian.jpg " ")
 
-### **STEP 3**: Interact with the Digital Assistant 
+### **STEP 3**: Assign a faulty job role to the new user created in Part 2. 
 
--   We are going to switch to the perspective of a new hire. This new hire was told to procure a laptop and business cards through his employer's pre-built Digital Assistant that has been integrated with ERP Cloud Procurement module. **Click** on the **Digital Assistant** icon in the bottom right hand corner and type in **I need a new laptop**
+-   Navigate back to the ERP Cloud security console. 
 
-![](./images/laptop.jpg " ")
+-   Search for the newly created user and click on the user's display name.
 
--   The Digital Assistant will prompt you if you would like it to recommend a laptop based on your job role. Type in **Yes**.
+-   Click **Edit** on the upper menu bar.
 
--   Browse what is available by clicking on the **Yellow side arrow** and select **more details** on your favorite option.
+-   Click **Add Role** next to the Roles header.
 
-![](./images/browse.jpg " ")
+-   Search for **Business Development Manager** and select **GSE Business Development Manager**.
 
--   The Digital Assistant will provide you with more details and ask if you would like more details on any other laptops.
+-   Click **Add Role Membership** then click **Done**.
 
--   Type in **No**
+-   The new user is now assigned the faulty job role.
 
-![](./images/no.jpg " ")
+-   It will take a few minutes for CASB to detect the anomaly. Hang tight!
 
--   The Digital Assistant will ask if you have made a choice. Type in **Yes** and select the **Laptop** you would like to procure.
+### **STEP 4**: Verify that an abnormal role assignment was detected by CASB.
 
-![](./images/select.jpg " ")
+-   Navigate back to the CASB console.
 
--   The Digital Assistant will create the purchase requisition and route the req. to your manager for approval. 
+-   Click on the upper left menu.
 
-![](./images/purchase.jpg " ")
+-   Click on **Applications**.
 
--   The next thing we need to do is procure business cards. To do this type in **Order business cards**
+-   Select **FA_CASB** and click **View details**.
 
--   The Digital Assistant will respond and give you a preview. Select **Tap here**.
+-   Once CASB detects the anomaly, the risk event will be shown similarly to below.
 
--   Select **Tap here**
-
-![](./images/bc.jpg " ")
-
--   This will open up a new tab where you can preview your business cards, select the quantity, and submit the order.
-
-![](./images/wb-1.jpg " ")
-
--   Select the quantity you want to order and select submit. **Close** the tab and open up the tab where you are logged into *ERP Cloud**.
-
-![](./images/wb-2.jpg " ")
-
--   The Digital Assistant will create the requisition, display the status of the order, and give you the requisition number.
-
-![](./images/fin.jpg " ")
-
--   When a new tab opened up, the application you were viewing is what's called a **WebView**. A WebView is an application that enables structured data entry through UI element and is able to integrate with the Digital Assistant. The WebView can validate user input and can be built using Oracle Visual Builder Cloud Service, like the one seen earlier, Oracle JET, or React. 
-
-
-## Part 3. Mobile Application and Oracle's AI Voice
-
-### **STEP 1**: Initial Setup
-
--   Follow the steps [here](https://demo.oracle.com/apex/f?p=GO:PAGE:0:DSD:NO:1:ID:53992) to install on iOS or Andriod mobile device. 
-
-### **STEP 2**: Interact with ODA
-
--   In this portion of the workshop we are going to get a few updates on the Finance Manager's account.
-
--   You can interact with the ODA by typing in the chat box or by clicking the microphone icon in the bottom right.
-
--   Press the microphone button and say **What is the account balance for cleaning?**
-
-![](./images/mobile-1.jpg " ")
-
--   Press the microphone button and say **How much do we owe our suppliers office depot?**
-
-![](./images/mobile-2.jpg " ")
-
--   Press the microphone button and say **Which account has the largest budget surplus?**
-
-![](./images/mobile-3.jpg " ")
-
--   Press the microphone button and say **Which project has the highest margins?**
-
-![](./images/mobile-4.jpg " ")
-
--   Oracle’s Digital assistant provides broad channel support like slack, teams, sms, mobile apps, text-to-speech, and speech to text capabilities. In this portion of the workshop Oracle's AI Voice is being used with no risky exposure to 3rd party api's.
-
-## BONUS: Create a twilio, slack, and/or Facebook channel route to Demo Services ODA
-
--   [Click here](https://demo.oracle.com/apex/f?p=GO:PAGE:0:DSD:NO:1:ID:76473) to do so.
+-   To gain more insight, click on the risk event row. Here we can see which user initiated the role assignment, what role was assigned, and to whom the role was assigned. 
 
 
 ## Summary
 
--   In this lab, you requested a demo ERP Cloud instance and interacted with the pre-built Digital Assistant skill for ERP. Oracle Digital Assistant pre-built skills showcase easy, interactive, intuitive and meaningful information without the need to login and open ERP applications.
+-   In this lab, you requested a demo ERP Cloud instance and further secured it with IDCS and CASB to detect fraudulent user behavior as well as leverage auto user provisioning from a single identity store to a target application.
 
 
--   **You are ready to move on to the next lab!**
+-   **You are finished with all of the labs!**
 
 [Back to top](#introduction)
 
