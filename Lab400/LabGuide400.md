@@ -39,17 +39,17 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Click the **Register a Demo**.
 
-![](./images/register.jpg " ")
+![](../Lab200/images/register.jpg " ")
 
 -   Search or select the Demo Title called **FUSION GSI - ERP, SCM, HCM & Engagement Cloud**.
 
-![](./images/demo-title.jpg " ")
+![](../Lab200/images/demo-title.jpg " ")
 
 -   Fill in the details, demo resource details, activity dates, and any additional information. 
 
 -   The select **Next** in the bottom right corner.
 
-![](./images/details.jpg " ")
+![](../Lab200/images/details.jpg " ")
 
 -   In the additional information section select the Horizontal or Industry-Specific category that is most applicable. 
 
@@ -61,7 +61,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Confirm your details and click **Submit**.
 
-![](./images/submit.jpg " ")
+![](../Lab200/images/submit.jpg " ")
 
 ### **STEP 2**: Access ERP Cloud Environment
 
@@ -71,11 +71,11 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Then click on **Launch Demo**
 
-![](./images/env-details.jpg " ")
+![](../Lab200/images/env-details.jpg " ")
 
 -   Click on **ERP and SCM Cloud Login** and you will be taken to the **Sign In** page for your ERP instance.
 
-![](./images/erp1.jpg " ")
+![](../Lab200/images/erp1.jpg " ")
 
 -   Here you can sign-in with a few different users using the same password, but in this workshop we will be exploring two different personas. 
 
