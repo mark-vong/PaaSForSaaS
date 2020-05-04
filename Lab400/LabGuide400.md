@@ -101,15 +101,17 @@ This lab walks you through registering a Fusion apps demo environment. From ther
     
 ![](./images/idcs-users.png " ")
 
--   A window will pop up prompting us to enter the new user's information. Go ahead and fill out the required fields then click **Finish**.
+-   A window will pop up prompting us to enter the new user's information. Go ahead and fill out the required fields then click **Next**.
 
-![](./images/da4.jpg " ")
+![](./images/idcs-newuser.png " ")
 
 -   We're now prompted to assign this user to a group. For the purpose of this lab, the facilitators have already created the group for us. Assign the user to **ERP_FA_Users** then click **Finish**.
 
+![](./images/idcs-newusergroup.png " ")
+
 -   The new user is created and we can see the user's current information, groups and application access. If you explore the groups and access tabs, we can see that the user belongs to **ERP_FA_Users** group and has access to **two** applications. These applications allow us to provision the user from IDCS to ERP Cloud using a pre-built connector. 
 
-![](./images/da5.jpg " ")
+![](./images/idcs-newuserprofile.png " ")
 
 ### **STEP 3**: Verify new user creation in ERP Cloud
 -   Sign in to the demo ERP Cloud instance as **DEMOFAADMIN** and use the password copied previously from the clipboard. This user, Harry Hooper, is the security administrator for the ERP Cloud instance.
