@@ -35,7 +35,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Once at the [homepage](https://demo.oracle.com/apex/f?p=DEMOWEB:HOME::::::), navigate to the "Demos" section. 
 
-![](./images/demo-home.jpg " ")
+![](../Lab200/images/demo-home.jpg " ")
 
 -   Click the **Register a Demo**.
 
