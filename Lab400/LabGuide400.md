@@ -113,6 +113,10 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 ![](./images/idcs-newuserprofile.png " ")
 
+![](./images/idcs-access.png " ")
+
+
+
 ### **STEP 3**: Verify new user creation in ERP Cloud
 -   Sign in to the demo ERP Cloud instance as **DEMOFAADMIN** and use the password copied previously from the clipboard. This user, Harry Hooper, is the security administrator for the ERP Cloud instance.
 
