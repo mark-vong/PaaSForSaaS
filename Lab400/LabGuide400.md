@@ -146,11 +146,13 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 ### **STEP 1**: Access the CASB console.
 
--   Navigate to the **IDCS console** sign-in page provided by your lab facilitator. Enter the provided administrator username and password. **If you do not have the URL or the credentials, please contact your lab facilitator.**
+-   Navigate to the **CASB console** sign-in page provided by your lab facilitator. Enter the provided administrator username and password. **If you do not have the URL or the credentials, please contact your lab facilitator.**
 
-![](./images/signout.jpg " ")
+![](./images/casb-login.png " ")
 
 -   Once logged in, we're greeted with the CASB dashboard. Here the security administrator can get quick insights into what applications are experiencing risky behaviors. These risks can also be filtered by geographical location, risk type, and associated users.
+
+![](./images/casb-dashboard.png " ")
 
 ### **STEP 2**: Create a new risk policy.
 
@@ -162,23 +164,37 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Click on **Policy Management**. 
 
+![](./images/casb-console.png " ")
+
 -   Here we can see a list of all the policies our CASB is leveraging to monitor all the applications associated with it for risky behavior. These policies are used to determine how we define risky behavior. 
+
+![](./images/casb-policy.png " ")
 
 -   Click on **New Policy**. 
 
-    -   **1**: Enter a **Name**, **Description**, and select a **Risk Priority** for the new policy. You may choose to include this in a user's risk score as well. Click **Next**.
+    -   Enter a **Name**, **Description**, and select a **Risk Priority** for the new policy. You may choose to include this in a user's risk score as well. Click **Next**.
+    
+    ![](./images/casb-newpolicy1.png " ")
 
-    -   **2**: Select **ERPCloud** for **Application type**, **Any** for **Application instance**, **Job Role** for **Resource**, **Text** for **Resource name**, contains **Business Development Manager**, **Role membership added** for **Action on this resource**. Click **Next**.
+    -   Select **ERPCloud** for **Application type**, **Any** for **Application instance**, **Job Role** for **Resource**, **Text** for **Resource name**, contains **Business Development Manager**, **Role membership added** for **Action on this resource**. Click **Next**.
     
-    -   **3**: Leave blank and click **Next**.
+    ![](./images/casb-newpolicy2.png " ")
     
-    -   **4**: Leave as is and click **Next**.
+    -   Leave blank and click **Next**.
     
-    -   **5**: You provide a custom alert message or add your email for the alert to be sent to you directly. Click **Next**.
+    ![](./images/casb-newpolicy3.png " ")
     
-    -   **6**: Review and click **Submit**.
-
-![](./images/signin-brian.jpg " ")
+    -   Leave as is and click **Next**.
+    
+    ![](./images/casb-newpolicy4.png " ")
+    
+    -   You provide a custom alert message or add your email for the alert to be sent to you directly. Click **Next**.
+    
+    ![](./images/casb-newpolicy5.png " ")
+    
+    -   Review and click **Submit**.
+    
+    ![](./images/casb-newpolicy6.png " ")
 
 ### **STEP 3**: Assign a faulty job role to the new user created in Part 2. 
 
@@ -186,13 +202,21 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Search for the newly created user and click on the user's display name.
 
+![](./images/erp-newusers.png " ")
+
 -   Click **Edit** on the upper menu bar.
 
+![](./images/erp-userinfo.png " ")
+
 -   Click **Add Role** next to the Roles header.
+
+![](./images/erp-edituser.png " ")
 
 -   Search for **Business Development Manager** and select **GSE Business Development Manager**.
 
 -   Click **Add Role Membership** then click **Done**.
+
+![](./images/erp-addrole.png " ")
 
 -   The new user is now assigned the faulty job role.
 
@@ -202,16 +226,23 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Navigate back to the CASB console.
 
+![](./images/casb-dashboard.png " ")
+
 -   Click on the upper left menu.
 
 -   Click on **Applications**.
 
 -   Select **FA_CASB** and click **View details**.
 
+![](./images/casb-applications.png " ")
+
 -   Once CASB detects the anomaly, the risk event will be shown similarly to below.
+
+![](./images/casb-applicationdetails.png " ")
 
 -   To gain more insight, click on the risk event row. Here we can see which user initiated the role assignment, what role was assigned, and to whom the role was assigned. 
 
+![](./images/casb-riskevent.png " ")
 
 ## Summary
 
