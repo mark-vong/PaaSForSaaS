@@ -120,7 +120,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 ### **STEP 3**: Verify new user creation in ERP Cloud
 -   Sign in to the demo ERP Cloud instance as **DEMOFAADMIN** and use the password copied previously from the clipboard. This user, Harry Hooper, is the security administrator for the ERP Cloud instance.
 
-![](./files/erp-login.png " ")
+![](./images/erp-login.png " ")
 
 -   Navigate to the **home page** of the ERP Cloud instance.
 
