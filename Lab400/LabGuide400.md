@@ -116,29 +116,27 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 ### **STEP 3**: Verify new user creation in ERP Cloud
 -   Sign in to the demo ERP Cloud instance as **DEMOFAADMIN** and use the password copied previously from the clipboard. This user, Harry Hooper, is the security administrator for the ERP Cloud instance.
 
-![](./files/receipt.jpg" ")
+![](./files/erp-login.png " ")
 
 -   Navigate to the **home page** of the ERP Cloud instance.
 
--   Click on the upper left menu.
-
--   Expand the **Tools** sub-menu.
+-   On the home page, scroll the dashboard until we find **Tools**. Click on it.
 
 -   Click on **Security Console**.
 
-![](./images/da7.jpg" ")
+![](./images/erp-security.png " ")
 
 -   Here we see the security configuration settings available to the administrator. 
 
 -   Click on **Users**.
-
-![](./images/da8.jpg " ")
 
 -   Now, we want to verify that the user we created in IDCS also exists in the ERP Cloud system.
 
 -   In the **Search bar**, type the username of the user created in IDCS.
 
 -   If the provisioning was successful, we will see the new user under **Search Results** as shown.
+
+![](./images/erp-users.png " ")
 
 ## Part 3. Monitor risky user behavior in ERP Cloud with CASB.
 
