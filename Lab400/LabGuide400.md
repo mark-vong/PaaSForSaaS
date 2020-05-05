@@ -202,7 +202,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Search for the newly created user and click on the user's display name.
 
-![](./images/erp-newusers.png " ")
+![](./images/erp-users.png " ")
 
 -   Click **Edit** on the upper menu bar.
 
