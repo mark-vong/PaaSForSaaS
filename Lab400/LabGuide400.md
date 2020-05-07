@@ -185,11 +185,19 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Navigate to the **IDCS console**, select **Applications**, and click **Add**.
 
+![](./images/idcs-addapp.png " ")
+
 -   Click **App Catalog**.
+
+![](./images/idcs-erpprov-catalog.png " ")
 
 -   Search **Oracle Fusion Applications Release 13** and then click **Add**.
 
+![](./images/idcs-erpprov-add.png " ")
+
 -   In the **Details** tab, update the name of the application to reflect your environment's name and add **_PROV** to indicate that this is the provisioning application.
+
+![](./images/idcs-erpprov-details.png " ")
 
 -   By default, all Oracle Fusion Applications are selected (**CRM, ERP, HCM, and SCM**). Un-check everything but **ERP** and click **Next**.
 
@@ -200,6 +208,8 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 -   Click **Upload** and search for the PEM certificate (**fa_cert.pem**) to upload into IDCS.
 
 -   Click **Next** and then **Finish**.
+
+![](./images/idcs-erpprov-sso.png " ")
 
 -   Now we have to enable provisioning, click on the **Provisioning** tab.
 
@@ -214,6 +224,8 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 -   Click on **Text Connectivity** to verify connection with the ERP Cloud environment.
 
 -   Once you see a confirmation message, you're all set. Click **Save**.
+
+![](./images/idcs-erpprov-prov.png " ")
 
 -   Now **Click Activate** and then click **OK** in the **Confirmation** window. IDCS displays a message that your Oracle Fusion Apps has been activated.
 
