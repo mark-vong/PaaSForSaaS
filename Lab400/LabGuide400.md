@@ -78,6 +78,10 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 ![](../Lab200/images/erp1.jpg " ")
 
 -   Here you can sign-in with a few different users using the same password, but in this workshop we will be exploring two different personas. 
+
+
+
+
 ## Part 2. Connect IDCS and ERP Cloud for Single Sign-On and User Provisioning
 
 
@@ -229,6 +233,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Now **Click Activate** and then click **OK** in the **Confirmation** window. IDCS displays a message that your Oracle Fusion Apps has been activated.
 
+
 ### **Step 5**: Register and Activate the Single Sign-On ERP cloud application in IDCS
 
 -   Although we already created a provisioning application for ERP Cloud, we have to create a separate application to enable **Single-Sign On**.
@@ -306,37 +311,8 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Part 3. Provision a user from IDCS to ERP Cloud
+
 
 ### **STEP 1**: Access the IDCS console
 
@@ -349,6 +325,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 -   In the **Users** module, click on the profile icon silhouette to navigate to the list of users in IDCS.
 
 ![](./images/idcs-console.png " ")
+
 
 ### **STEP 2**: Create a new user in IDCS
 
@@ -371,7 +348,6 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 ![](./images/idcs-newuserprofile.png " ")
 
 ![](./images/idcs-access.png " ")
-
 
 
 ### **STEP 3**: Verify new user creation in ERP Cloud
@@ -399,7 +375,90 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 ![](./images/erp-users.png " ")
 
-## Part 3. Monitor risky user behavior in ERP Cloud with CASB.
+
+
+
+## Part 4. Connect CASB with ERP Cloud for application fraud detection
+
+
+### **STEP 1**: Create a Dedicated CASB User in ERP Cloud
+
+-   Log into **ERP Cloud** as the administrator and navigate to the **home page**.
+
+-   In the **dashboard** area, scroll to the right until you see **Tools**, click on **Security Console**.
+
+![](./images/erp-security.png " ")
+
+-   Click on **Users** and then **Add User Account**.
+
+![](./images/erp-adduser.png " ")
+
+-   On the **Add User Account** page:
+
+    -   Set the **Person Type** field to **None**.
+
+    -   Enter a **First Name** for the user (for example, **CASB**).
+
+    -   Enter a **Last Name** for the user (for example, **Oracle CASB Service Account**).
+
+    -   Enter a **User Name** to identify the account (for example, **CASB**). **This is the name used to register ERP Cloud in CASB.**
+
+    -   Enter a **Password** and re-enter to **Confirm Password**.
+
+-   Click **Add Role**.
+
+![](./images/erp-adduser-details.png " ")
+
+-   Search for **ORA_FND_CASB_AUDIT_ACCESS_DISCRETIONARY** and click **Add Role Membership**. Click **Done** and **Save and Close**
+
+![](./images/erp-adduser-roles.png " ")
+
+-   Click on **Roles** and then **Create Role**.
+
+![](./images/erp-createrole0.png " ")
+
+-   On the **Create Role : Basic Information** page:
+
+    -   Enter a **Role Name** (for example, **CASB_MANAGE_AUDIT_ROLE**)
+
+    -   Copy that entry into the **Role Code** box.
+
+    -   Set **Role Category** to **Setup - Job Roles** and click next.
+
+![](./images/erp-createrole1.png " ")
+
+-   On the **Function Security Policies** page, click on the **Privileges** tab and click on **Add Function Security Policy**.
+
+![](./images/erp-createrole2.png " ")
+
+-   Search for **FND_MANAGE_AUDIT_POLICIES_PRIV** and select **Manage Audit Policies**.
+
+-   Click **Add Privilege to Role** and click **OK** then **Done**.
+
+![](./images/erp-createrole3.png " ")
+
+-   Now keep clicking **Next** until you reach the **Summary Page**, then click **Save and Close** and **OK**.
+
+![](./images/erp-createrole4.png " ")
+
+-   Now navigate back to **Users** and search for the **CASB Service User** you created.
+
+-   On **User Account Details**, click **Edit** and **Add Role**.
+
+![](./images/erp-assignrole1.png " ")
+
+-   Search for the role you created, **CASB_MANAGE_AUDIT_ROLE** and click **Add Role Membership**.
+
+-   Click **OK** and **Done**. **Save and Close**.
+
+![](./images/erp-assignrole2.png " ")
+
+
+
+
+
+## Part 5. Monitor risky user behavior in ERP Cloud with CASB.
+
 
 ### **STEP 1**: Access the CASB console.
 
@@ -410,6 +469,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 -   Once logged in, we're greeted with the CASB dashboard. Here the security administrator can get quick insights into what applications are experiencing risky behaviors. These risks can also be filtered by geographical location, risk type, and associated users.
 
 ![](./images/casb-dashboard.png " ")
+
 
 ### **STEP 2**: Create a new risk policy.
 
@@ -453,6 +513,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
     
     ![](./images/casb-newpolicy6.png " ")
 
+
 ### **STEP 3**: Assign a faulty job role to the new user created in Part 2. 
 
 -   Navigate back to the ERP Cloud security console. 
@@ -479,6 +540,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   It will take a few minutes for CASB to detect the anomaly. Hang tight!
 
+
 ### **STEP 4**: Verify that an abnormal role assignment was detected by CASB.
 
 -   Navigate back to the CASB console.
@@ -500,6 +562,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 -   To gain more insight, click on the risk event row. Here we can see which user initiated the role assignment, what role was assigned, and to whom the role was assigned. 
 
 ![](./images/casb-riskevent.png " ")
+
 
 ## Summary
 
