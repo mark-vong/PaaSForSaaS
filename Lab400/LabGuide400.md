@@ -89,6 +89,8 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   In the web browser address bar update the URL to access the metadata with the following format: **https://(IDCS_TENANT_INSTANCE).identity.oraclecloud.com/fed/v1/metadata**, where **(IDCS_TENANT_INSTANCE)** is the tenant name of your IDCS instance. This value should already appear in the web browser. 
 
+![](./images/idcs-metadata.png " ")
+
 -   Save the XML content of your web browser to a file on your desktop with the name **idp_metadata.xml**. Make a note of where this file is saved to.
 
 
@@ -103,11 +105,19 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Click on **Setup and Maintenance**.
 
--   Click on the **Tasks** icon, select **Review Topology**, and then click the **Detailed** tab.
+![](./images/erp-maint.png " ")
 
--   Expand the **FADomain** domain name.
+-   Click on the **Tasks** icon, select **Review Topology**.
 
--   For the **HCMServices** entry, note the values of **External Server Host** and **External Server Port**.
+![](./images/tasks.png " ")
+
+-   Then click the **Detailed** tab and expand the **FADomain** domain name.
+
+![](./images/detailedtasks.png " ")
+
+-   For the **HCMServices** entry, note the values of **External Server Host** and **External Server Port**. **The following are examples, your values will be different**.
+
+![](./images/hcmservice.png " ")
 
 -   If you cannot locate that entry, expand the **hcmdomain** domain name, and note the values of **External Server Host** and **External Server Port** for the **HCM Core Setup** entry. Write down these values because we will need them later.
 
@@ -128,7 +138,11 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   We are going to add IDCS an identity provider for ERP cloud. Click on **Create Identity Provider**.
 
+![](./images/erp-sso.png " ")
+
 -   Click on **Edit**.
+
+![](./images/erp-sso-edit.png " ")
 
 -   Provide a **name** for the identity provider.
 
@@ -142,7 +156,11 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Click **Save and Close**
 
+![](./images/erp-sso-details.png " ")
+
 -   Now in the **Single Sign-On Configuration:Identity Provider Details** page, click the **Service Provider Details**, click the download icon for the **Service Provider SHA 256 Metadata** URL, and save the file to your desktop. Name it **fa_sha256_metadata.xml**.
+
+![](./images/erp-metadata.png " ")
 
 -   Locate the **fa_sha256_metadata.xml** file you just saved to your desktop and open it in your favorite text editor. 
 
@@ -157,6 +175,8 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 -   Now we're going to create a **PEM Certificate file**. 
 
 -   Open a new text editor file. Paste the **fa_sha256.metadata.xml** copied certificate value from your notes into the new file. Please reference the attached diagram for syntax. It should begin with **BEGIN CERTIFICATE** and end with **END CERTIFICATE**. Save this file as **fa_cert.pem**.
+
+![](./images/pem.png " ")
 
 -   Now we're ready to register ERP Cloud in IDCS as an application. Please make sure you have the values of ERP cloud's **entityID**, **tenant name**, **domain name** as well as the location of the **fa_cert.pem** file.
 
