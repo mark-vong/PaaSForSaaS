@@ -454,6 +454,51 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 ![](./images/erp-assignrole2.png " ")
 
 
+### **STEP 2**: Enabling Business Object Auditing for ERP Cloud
+
+-   Expand the **navigator menu** on the upper left.
+
+-   Scroll down and expand **Others**.
+
+-   Click on **Setup and Maintenance**.
+
+![](./images/erp-maint.png " ") 
+
+-   **Search Tasks** for **manage audit policies**. 
+
+-   Click on **Manage Audit Policies**.
+
+![](./images/erp-manageaudit.png " ") 
+
+-   Locate the **Oracle Fusion Applications** row and set **Auditing Level** to **Auditing**.
+
+-   Now, locate the **Oracle Platform Security Services** row and set **Auditing Level** to **Low - All Events**.
+
+![](./images/erp-manageaudit-policies.png " ") 
+
+-   Click **Save and Close**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
