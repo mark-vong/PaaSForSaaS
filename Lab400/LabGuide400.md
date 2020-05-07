@@ -245,6 +245,54 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Now **Click Activate** and then click **OK** in the **Confirmation** window. IDCS displays a message that your application has been activated.
 
+### **Step 6**: Test Single Sign-On from ERP Cloud
+
+-   In order to activate IDCS as the identity provider for ERP Cloud, we need to first test the integration to confirm a successful connection.
+
+-   Navigate back to the **ERP Security Console** and click on **Single Sign-On**.
+
+-   Click on the **IDCS identity provider we just added.**
+
+-   Click on **Diagnostics and Activation**.
+
+-   Click **Test**.
+
+-   Once we see a success, we can enable IDCS as an identity provider for ERP Cloud.
+
+![](./images/erp-sso-test.png " ")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Part 3. Provision a user from IDCS to ERP Cloud
 
