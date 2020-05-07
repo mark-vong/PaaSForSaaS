@@ -80,7 +80,153 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 -   Here you can sign-in with a few different users using the same password, but in this workshop we will be exploring two different personas. 
 ## Part 2. Connect IDCS and ERP Cloud for Single Sign-On and User Provisioning
 
-## Part 2. Provision a user from IDCS to ERP Cloud
+
+### **STEP 1**: Download IDCS Identity Provider Metadata
+
+-   Navigate to the **IDCS console** sign-in page provided by your lab facilitator. Enter the provided administrator username and password. **If you do not have the URL or the credentials, please contact your lab facilitator.**
+
+![](./images/idcs-login.png " ")
+
+-   In the web browser address bar update the URL to access the metadata with the following format: **https://(IDCS_TENANT_INSTANCE).identity.oraclecloud.com/fed/v1/metadata**, where **(IDCS_TENANT_INSTANCE)** is the tenant name of your IDCS instance. This value should already appear in the web browser. 
+
+-   Save the XML content of your web browser to a file on your desktop with the name **idp_metadata.xml**. Make a note of where this file is saved to.
+
+
+### **STEP 2**: Obtain ERP Cloud External Server Host and Port Values
+-   Sign in to the demo ERP Cloud instance as **DEMOFAADMIN** and use the password copied previously from the clipboard. This user, Harry Hooper, is the security administrator for the ERP Cloud instance.
+
+![](./images/erp-login.png " ")
+
+-   Expand the **navigator menu** on the upper left.
+
+-   Scroll down and expand **Others**.
+
+-   Click on **Setup and Maintenance**.
+
+-   Click on the **Tasks** icon, select **Review Topology**, and then click the **Detailed** tab.
+
+-   Expand the **FADomain** domain name.
+
+-   For the **HCMServices** entry, note the values of **External Server Host** and **External Server Port**.
+
+-   If you cannot locate that entry, expand the **hcmdomain** domain name, and note the values of **External Server Host** and **External Server Port** for the **HCM Core Setup** entry. Write down these values because we will need them later.
+
+-   Use the **External Server Host** value to define the ERP Cloud environment's **tenant name** and **domain name**. Write down these values because they will be used later in the configuration of ERP Cloud in IDCS. An example of the two values is provided below.
+
+
+### **STEP 3**: Create IDCS as an Identity Provider in ERP Cloud
+
+-   Navigate back to the home page and scroll the dashboard tiles until we find **Tools**. Click on it.
+
+-   Click on **Security Console**.
+
+![](./images/erp-security.png " ")
+
+-   Here we see the security settings available to the administrator.
+
+-   Click on **Single Sign-On**.
+
+-   We are going to add IDCS an identity provider for ERP cloud. Click on **Create Identity Provider**.
+
+-   Click on **Edit**.
+
+-   Provide a **name** for the identity provider.
+
+-   Select **Unspecified** for the **Name ID Format**.
+
+-   Check the box for **Default Identity Provider**.
+
+-   Check the box for **Enable Chooser Login Page**. This will provide us with two authentication methods: from IDCS or from ERP Cloud. This is generally a best practice to maintain local administrator accounts in ERP Cloud in the event that the identity provider (IDCS) experiences any issues.
+
+-   In the **Import Identity Provider Metadata** section, click **Browse**, locate the previously downloaded IDCS metadata file **(idp_metadata.xml)** and click **Open**.
+
+-   Click **Save and Close**
+
+-   Now in the **Single Sign-On Configuration:Identity Provider Details** page, click the **Service Provider Details**, click the download icon for the **Service Provider SHA 256 Metadata** URL, and save the file to your desktop. Name it **fa_sha256_metadata.xml**.
+
+-   Locate the **fa_sha256_metadata.xml** file you just saved to your desktop and open it in your favorite text editor. 
+
+-   In the file, locate the **<\dsig:X509Certificate>** tag under **<\md:KeyDescriptor use="signing">**, and copy the value between **<\dsig:X509Certificate>** and **<\/dsig:X509Certificate>** into your notes.
+
+-   Now locate the **entityID** attribute in the **<\md:EntityDescriptor>** tag and save this to your notes.
+
+-   Also locate the **Location** attribute for **<\md:AssertionConsumerService>**. This should be similar to **https://(TENANT).(DOMAIN).com/oam/server/fed/sp/sso**. Save this value to your notes as well. 
+
+-   Once the values are copied, you may close the file.
+
+-   Now we're going to create a **PEM Certificate file**. 
+
+-   Open a new text editor file. Paste the **fa_sha256.metadata.xml** copied certificate value from your notes into the new file. Please reference the attached diagram for syntax. It should begin with **BEGIN CERTIFICATE** and end with **END CERTIFICATE**. Save this file as **fa_cert.pem**.
+
+-   Now we're ready to register ERP Cloud in IDCS as an application. Please make sure you have the values of ERP cloud's **entityID**, **tenant name**, **domain name** as well as the location of the **fa_cert.pem** file.
+
+
+### **STEP 4**: Register and Activate the user provisioning to ERP cloud application in IDCS
+
+-   Navigate to the **IDCS console**, select **Applications**, and click **Add**.
+
+-   Click **App Catalog**.
+
+-   Search **Oracle Fusion Applications Release 13** and then click **Add**.
+
+-   In the **Details** tab, update the name of the application to reflect your environment's name and add **_PROV** to indicate that this is the provisioning application.
+
+-   By default, all Oracle Fusion Applications are selected (**CRM, ERP, HCM, and SCM**). Un-check everything but **ERP** and click **Next**.
+
+-   From your previous notes, enter the **Tenant Name** and the **Domain Name** of your ERP Cloud instance.
+
+-   Click on the **SSO Configuration** tab and enter the **entityID** you obtained previously. However, modify the value to **remove the port number**.
+
+-   Click **Upload** and search for the PEM certificate (**fa_cert.pem**) to upload into IDCS.
+
+-   Click **Next** and then **Finish**.
+
+-   Now we have to enable provisioning, click on the **Provisioning** tab.
+
+-   Turn on **Enable Provisioning**.
+
+-   Enter the **ERP Cloud administrator's** username and password. 
+
+-   Provide the **Host Name** obtained previously as **External Server Host**.
+
+-   Provide the **Port Number** obtained previously as **Port Value**.
+
+-   Click on **Text Connectivity** to verify connection with the ERP Cloud environment.
+
+-   Once you see a confirmation message, you're all set. Click **Save**.
+
+-   Now **Click Activate** and then click **OK** in the **Confirmation** window. IDCS displays a message that your Oracle Fusion Apps has been activated.
+
+### **Step 5**: Register and Activate the Single Sign-On ERP cloud application in IDCS
+
+-   Although we already created a provisioning application for ERP Cloud, we have to create a separate application to enable **Single-Sign On**.
+
+-   Navigate back to the **Applications** page and click **Add**.
+
+-   Select **SAML Application**.
+
+-   Provide a name for this application to reflect your ERP Cloud instance and append **_SSO** to the end of it to differentiate it from the **_PROV** provisioning application. 
+
+-   Provide the **Application URL**. This value should be everything in the **entityID** up to **.com**.
+
+-   Now click **Next** to hit the **SSO Configuration** page.
+
+-   Enter the **entityID** into the field. **Include the port number this time**. 
+
+-   Enter the **AssertionConsumerService Location** value from your notes into the **Assertion Consumer URL** field.
+
+-   Select **Unspecified** for the **NameID Format**.
+
+-   Select **Primary Email** for the **NameID Value**.
+
+-   Click **Upload** and upload the PEM certificate (**fa_cert.pem**).
+
+-   Click **Save** and **Finish**.
+
+-   Now **Click Activate** and then click **OK** in the **Confirmation** window. IDCS displays a message that your application has been activated.
+
+
+## Part 3. Provision a user from IDCS to ERP Cloud
 
 ### **STEP 1**: Access the IDCS console
 
