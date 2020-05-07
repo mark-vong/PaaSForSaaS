@@ -235,13 +235,19 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Navigate back to the **Applications** page and click **Add**.
 
+![](./images/idcs-addapp.png " ")
+
 -   Select **SAML Application**.
+
+![](./images/idcs-saml.png " ")
 
 -   Provide a name for this application to reflect your ERP Cloud instance and append **_SSO** to the end of it to differentiate it from the **_PROV** provisioning application. 
 
 -   Provide the **Application URL**. This value should be everything in the **entityID** up to **.com**.
 
 -   Now click **Next** to hit the **SSO Configuration** page.
+
+![](./images/idcs-erpsso-details.png " ")
 
 -   Enter the **entityID** into the field. **Include the port number this time**. 
 
@@ -253,11 +259,36 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Click **Upload** and upload the PEM certificate (**fa_cert.pem**).
 
+![](./images/idcs-erpsso-sso.png " ")
+
 -   Click **Save** and **Finish**.
 
 -   Now **Click Activate** and then click **OK** in the **Confirmation** window. IDCS displays a message that your application has been activated.
 
-### **Step 6**: Test Single Sign-On from ERP Cloud
+
+### **Step 6**: Create an ERP users group in IDCS
+
+-   We will need to create an ERP users group in IDCS to better manage any new users we provision in IDCS and want to move over to ERP cloud.
+
+-   Navigate to **IDCS console** and click on **Groups**.
+
+-   Click **Add**.
+
+![](./images/idcs-addgroup.png " ")
+
+-   Provide a group name for your ERP users and click **Finish**.
+
+![](./images/idcs-groupname.png " ")
+
+-   Search for the group and click on it. Then click on the **Access** tab.
+
+-   Assign the ERP provisioning and SSO applications to this group. This is done to facilitate user provisioning from IDCS to ERP cloud as well as automatically enable SSO for the user.
+
+![](./images/idcs-groupaccess.png " ")
+
+
+
+### **Step 7**: Test Single Sign-On from ERP Cloud
 
 -   In order to activate IDCS as the identity provider for ERP Cloud, we need to first test the integration to confirm a successful connection.
 
