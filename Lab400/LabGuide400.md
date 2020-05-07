@@ -78,6 +78,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 ![](../Lab200/images/erp1.jpg " ")
 
 -   Here you can sign-in with a few different users using the same password, but in this workshop we will be exploring two different personas. 
+## Part 2. Connect IDCS and ERP Cloud for Single Sign-On and User Provisioning
 
 ## Part 2. Provision a user from IDCS to ERP Cloud
 
