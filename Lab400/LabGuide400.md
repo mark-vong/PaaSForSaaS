@@ -164,7 +164,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Locate the **fa_sha256_metadata.xml** file you just saved to your desktop and open it in your favorite text editor. 
 
--   In the file, locate the **<\dsig:X509Certificate>** tag under **<\md:KeyDescriptor use="signing">**, and copy the value between **<\dsig:X509Certificate>** and **<\/dsig:X509Certificate>** into your notes.
+-   In the file, locate the **<dsig:X509Certificate>** tag under **<\md:KeyDescriptor use="signing">**, and copy the value between **<\dsig:X509Certificate>** and **<\/dsig:X509Certificate>** into your notes.
 
 -   Now locate the **entityID** attribute in the **<\md:EntityDescriptor>** tag and save this to your notes.
 
