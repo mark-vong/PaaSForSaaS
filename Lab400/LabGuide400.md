@@ -409,7 +409,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 ![](./images/erp-adduser-details.png " ")
 
--   Search for **ORA_FND_CASB_AUDIT_ACCESS_DISCRETIONARY** and click **Add Role Membership**. Click **Done** and **Save and Close**
+-   Search for **ORA\_FND_CASB_AUDIT_ACCESS_DISCRETIONARY** and click **Add Role Membership**. Click **Done** and **Save and Close**
 
 ![](./images/erp-adduser-roles.png " ")
 
