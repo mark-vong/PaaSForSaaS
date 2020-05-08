@@ -499,7 +499,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Check **I understand and explicitly approve...** and click **Next**.
 
-![](./images/casb-addapp-erptype.png " ") 
+![](./images/casb-addapp-monitortype.png " ") 
 
 -   Now we have to enter the credentials for our ERP Cloud instance.
 
