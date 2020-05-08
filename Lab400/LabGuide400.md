@@ -479,25 +479,41 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 -   Click **Save and Close**.
 
 
+### **STEP 3**: Adding ERP Cloud to CASB
 
+-   Navigate to the **CASB console** and login with administrator credentials. 
 
+-   Click on **Add/Modify App**
 
+![](./images/casb-addapp.png " ") 
 
+-   Select **ERPCloud** as the app type and click **Next**.
 
+![](./images/casb-addapp-erp.png " ") 
 
+-   Enter a unique name for your ERP Cloud instance and click **Next**.
 
+![](./images/casb-addapp-erpname.png " ")
 
+-   Make sure **Monitor ERP cloud role, role memberships and privilege** is selected. 
 
+-   Check **I understand and explicitly approve...** and click **Next**.
 
+![](./images/casb-addapp-erptype.png " ") 
 
+-   Now we have to enter the credentials for our ERP Cloud instance.
 
+-   In the **Host name** field, enter the **ERP Cloud application URL**.
 
+-   For the **Username**, enter the username of the user we created previously, for example **CASB**.
 
+-   Enter the **Password** for the CASB service user.
 
+-   Click **Test Credentials** and when you see a success, click **Submit**.
 
+![](./images/casb-addapp-creds.png " ") 
 
-
-
+-   The application is now registered in CASB! **Please note that it takes about 30 minutes for CASB to initially sync with ERP Cloud to pull in data.**
 
 
 
