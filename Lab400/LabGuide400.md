@@ -409,7 +409,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 ![](./images/erp-adduser-details.png " ")
 
--   Search for **ORA\_FND_CASB_AUDIT_ACCESS_DISCRETIONARY** and click **Add Role Membership**. Click **Done** and **Save and Close**
+-   Search for **ORA\_FND\_CASB\_AUDIT\_ACCESS\_DISCRETIONARY** and click **Add Role Membership**. Click **Done** and **Save and Close**
 
 ![](./images/erp-adduser-roles.png " ")
 
@@ -419,7 +419,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   On the **Create Role : Basic Information** page:
 
-    -   Enter a **Role Name** (for example, **CASB_MANAGE_AUDIT_ROLE**)
+    -   Enter a **Role Name** (for example, **CASB\_MANAGE\_AUDIT\_ROLE**)
 
     -   Copy that entry into the **Role Code** box.
 
@@ -431,7 +431,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 ![](./images/erp-createrole2.png " ")
 
--   Search for **FND_MANAGE_AUDIT_POLICIES_PRIV** and select **Manage Audit Policies**.
+-   Search for **FND\_MANAGE\_AUDIT\_POLICIES\_PRIV** and select **Manage Audit Policies**.
 
 -   Click **Add Privilege to Role** and click **OK** then **Done**.
 
@@ -447,7 +447,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 ![](./images/erp-assignrole1.png " ")
 
--   Search for the role you created, **CASB_MANAGE_AUDIT_ROLE** and click **Add Role Membership**.
+-   Search for the role you created, **CASB\_MANAGE\_AUDIT\_ROLE** and click **Add Role Membership**.
 
 -   Click **OK** and **Done**. **Save and Close**.
 
@@ -612,7 +612,7 @@ This lab walks you through registering a Fusion apps demo environment. From ther
 
 -   Click on **Applications**.
 
--   Select **FA_CASB** and click **View details**.
+-   Select **FA\_CASB** and click **View details**.
 
 ![](./images/casb-applications.png " ")
 
